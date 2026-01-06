@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sejarah CPU</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#ffdf5d;
+      --secondary:#10a2ac;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),url('pict/7966.jpg') center/cover fixed;
+      color:#eee;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      backdrop-filter:blur(6px);
+    }
+
+    /* HERO */
+    .hero{
+      background:url('pict/shad.png') center/cover;
+      position:relative;
+      border-bottom:4px solid var(--accent);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.65);
+    }
+
+    .hero .container{
+      position:relative;
+      z-index:1;
+    }
+
+    .hero h1{
+      color:var(--accent);
+    }
+
+    /* CONTENT */
+    .content{
+      background:linear-gradient(180deg,#0b0b0b,#000);
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 25px 50px rgba(0,0,0,.7);
+    }
+
+    .content h1{
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    .content h2{
+      color:var(--secondary);
+      margin-top:35px;
+      font-weight:600;
+    }
+
+    .content p{
+      line-height:1.8;
+      color:#ccc;
+    }
+
+    .content mark{
+      background:var(--accent);
+      color:#000;
+      padding:3px 6px;
+      border-radius:6px;
+    }
+
+    .content img{
+      border-radius:18px;
+      transition:.4s ease;
+    }
+
+    .content img:hover{
+      transform:scale(1.03);
+      box-shadow:0 20px 40px rgba(0,0,0,.8);
+    }
+
+    /* HEADER STRIP */
+    .top-strip{
+      background:linear-gradient(90deg,#000,var(--secondary),#000);
+      letter-spacing:.5px;
+    }
+
+    footer{
+      color:#aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-warning" href="#">SEJARAH CPU</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Sejarah</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER STRIP -->
+<div class="top-strip text-center py-2 text-warning fw-bold">
+  Perjalanan Panjang Otak Komputer 🧠
+</div>
+
+<!-- HERO -->
+<section class="hero text-center py-5">
+  <div class="container">
+    <h1 class="fw-bold display-4">Sejarah CPU</h1>
+    <p class="lead">Dari Tabung Vakum hingga Prosesor Modern</p>
+  </div>
+</section>
+
+<!-- WAKTU -->
+<div class="text-center my-4">
+  <h5 id="salam-waktu" class="text-warning fw-semibold"></h5>
+  <small id="jam" class="text-light"></small>
+</div>
+
+<!-- CONTENT -->
+<div class="container my-5">
+  <div class="content text-center">
+
+    <h1 class="mb-4">Sejarah dan Perkembangan CPU</h1>
+
+    <h2>Sejarah Singkat CPU</h2>
+    <p>
+      CPU pertama kali muncul pada era 1940-an dalam bentuk tabung vakum raksasa.
+      Komputer seperti <mark>ENIAC</mark> menggunakan ribuan tabung untuk menjalankan
+      operasi dasar dengan konsumsi daya yang sangat besar.
+    </p>
+
+    <h2>Perkembangan CPU dari 1946 hingga Sekarang</h2>
+    <img src="pict/sjr.jpg" class="img-fluid my-4 shadow" alt="Evolusi CPU">
+
+    <h2>Masa Depan CPU</h2>
+    <p>
+      Di masa depan, CPU diprediksi akan semakin berfokus pada
+      <mark>komputasi paralel</mark>, integrasi kecerdasan buatan (AI),
+      serta efisiensi energi yang lebih tinggi.
+    </p>
+
+    <h2>Kesimpulan</h2>
+    <p>
+      CPU merupakan komponen vital yang terus berkembang mengikuti kebutuhan teknologi.
+      Dari mesin raksasa hingga chip mungil berdaya tinggi, CPU adalah fondasi dunia digital modern.
+    </p>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-black text-center py-3">
+  <small>&copy; CopyRight Azka Naufaldi | 251011701158 | SIFP016</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="time.js"></script>
+</body>
+</html>

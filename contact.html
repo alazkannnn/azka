@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Edukasi Komputer</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+        url('pict/for.jpg') no-repeat center/cover fixed;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    .navbar { backdrop-filter: blur(10px); }
+
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url('pict/shad.png') center/cover;
+      border-bottom: 4px solid #ffc107;
+    }
+
+    .form-box, .thanks-box {
+      background: rgba(255,255,255,0.95);
+      color: #1b2a49;
+      border-radius: 22px;
+      padding: 40px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+      animation: fadeUp 0.6s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-warning {
+      border-radius: 30px;
+      padding: 10px 26px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-warning" href="#">CONTACT</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center py-5">
+  <div class="container">
+    <h1 class="display-5 text-warning">Contact Us</h1>
+    <p class="lead">Kami siap membantu Anda</p>
+  </div>
+</section>
+
+<!-- WAKTU -->
+<div class="text-center my-4">
+  <h5 id="salam-waktu" class="text-warning fw-semibold"></h5>
+  <small id="jam" class="text-light"></small>
+</div>
+
+<!-- CONTENT -->
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7 col-md-9">
+
+      <!-- FORM -->
+      <div class="form-box" id="formSection">
+        <h3 class="text-center mb-4">Hubungi Kami</h3>
+
+        <form id="contactForm">
+          <div class="mb-3">
+            <label class="fw-bold">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="fw-bold">Pesan Anda</label>
+            <textarea class="form-control" rows="4" required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning">
+              Kirim Pesan
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- THANK YOU -->
+      <div class="thanks-box text-center d-none" id="thanksSection">
+        <h2 class="text-success fw-bold">Pesan Terkirim ✅</h2>
+        <p class="mt-3 fs-5">
+          Terima kasih <b id="outputNama"></b> 🙏  
+          <br>
+          Pesan dan feedback kamu sudah kami terima.
+        </p>
+        <p class="text-muted">
+          Kami akan segera menindaklanjuti pesan tersebut.
+        </p>
+
+        <a href="index.html" class="btn btn-warning mt-3">
+          Kembali ke Home
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="bg-black text-center py-3">
+  <small>&copy; CopyRight Azka Naufaldi | 251011701158 | SIFP016</small>
+</footer>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const formSection = document.getElementById("formSection");
+  const thanksSection = document.getElementById("thanksSection");
+  const outputNama = document.getElementById("outputNama");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // stop submit asli
+
+    const nama = document.getElementById("nama").value;
+
+    outputNama.textContent = nama;
+    formSection.classList.add("d-none");
+    thanksSection.classList.remove("d-none");
+  });
+</script>
+<script src="time.js"></script>
+</body>
+</html>

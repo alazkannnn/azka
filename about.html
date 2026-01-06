@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Edukasi Komputer</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+        url('pict/for.jpg') no-repeat center/cover fixed;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    /* HEADER STRIP */
+    .top-strip {
+      background: linear-gradient(90deg, #ffc107, #ff9800);
+      color: black;
+      font-weight: 600;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      backdrop-filter: blur(10px);
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url('pict/shad.png') center/cover;
+      border-bottom: 4px solid #ffc107;
+    }
+
+    .hero h1 {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* CONTENT BOX */
+    .content-box {
+      background: rgba(255,255,255,0.95);
+      color: #1b2a49;
+      border-radius: 22px;
+      padding: 40px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      animation: fadeUp 0.7s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-box h2 {
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    .content-box h3 {
+      font-weight: 600;
+      margin-top: 30px;
+      color: #198754;
+    }
+
+    .content-box p {
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content-box ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .content-box ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #ffc107;
+      font-weight: bold;
+    }
+
+    /* INFO CARDS */
+    .info-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.35s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="top-strip text-center py-2">
+  Tentang Kami 💻
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-warning" href="#">ABOUT</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center py-5">
+  <div class="container">
+    <h1 class="display-5 text-warning">About Us</h1>
+    <p class="lead">Kenali lebih dekat siapa kami & apa tujuan kami</p>
+  </div>
+</section>
+
+<!-- WAKTU -->
+<div class="text-center my-4">
+  <h5 id="salam-waktu" class="text-warning fw-semibold"></h5>
+  <small id="jam" class="text-light"></small>
+</div>
+
+<!-- CONTENT -->
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+
+      <div class="content-box">
+        <h2>Tentang Kami</h2>
+        <p>
+          Website <b>Edukasi CPU</b> hadir sebagai media pembelajaran sekaligus
+          platform informasi seputar <b>CPU, komponen komputer, dan teknologi modern</b>.
+          Kami juga menyediakan layanan pemesanan komponen komputer dengan proses yang mudah
+          dan transparan.
+        </p>
+
+        <p>
+          Berdiri sejak <b>2025</b>, kami berkomitmen menghadirkan konten yang informatif,
+          tampilan yang modern, serta pengalaman pengguna yang nyaman.
+        </p>
+
+        <h3>Visi & Misi</h3>
+        <ul>
+          <li>Menjadi platform edukasi komputer yang terpercaya</li>
+          <li>Menyediakan informasi dan produk teknologi terkini</li>
+          <li>Memberikan pengalaman belajar & belanja yang aman dan mudah</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INFO CARDS -->
+  <div class="row mt-5 g-4 text-white">
+    <div class="col-md-4">
+      <div class="info-card">
+        <h4 class="text-warning">Edukasi</h4>
+        <p>Menyajikan materi komputer yang mudah dipahami.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="info-card">
+        <h4 class="text-warning">Teknologi</h4>
+        <p>Mengikuti perkembangan hardware & software terbaru.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="info-card">
+        <h4 class="text-warning">Pelayanan</h4>
+        <p>Fokus pada kenyamanan dan kepuasan pengguna.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-black text-center py-3 mt-5">
+  <small>&copy; CopyRight Azka Naufaldi | 251011701158 | SIFP016</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="time.js"></script>
+</body>
+</html>

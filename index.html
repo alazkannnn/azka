@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPU | Edukasi Komputer</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* =====================
+       GLOBAL
+    ====================== */
+    body {
+      background: radial-gradient(circle at top, #0f5132, #000);
+      background-size: 200% 200%;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: white;
+      animation: fadePage 0.6s ease, bgMove 12s ease infinite;
+    }
+
+    p {
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+
+    mark {
+      background: linear-gradient(90deg, #ffc107, #ff9800);
+      color: black;
+      padding: 2px 6px;
+      border-radius: 6px;
+      animation: glowMark 2.5s infinite;
+    }
+
+    @keyframes fadePage {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glowMark {
+      0%,100% { box-shadow: 0 0 0 rgba(255,193,7,.5); }
+      50% { box-shadow: 0 0 18px rgba(255,193,7,.9); }
+    }
+
+    /* =====================
+       NAVBAR & HERO
+    ====================== */
+    .navbar {
+      backdrop-filter: blur(10px);
+      margin-top: 6px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #198754, #0a3622);
+      border-radius: 0 0 60px 60px;
+      box-shadow: inset 0 -30px 60px rgba(0,0,0,0.4);
+    }
+
+    .hero h1 {
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    /* =====================
+       CARD & MEDIA
+    ====================== */
+    .card {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+    }
+
+    .img-wrap-left {
+      float: left;
+      max-width: 300px;
+      margin: 0 24px 18px 0;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+      animation: floatImg 4s ease-in-out infinite;
+    }
+
+    @keyframes floatImg {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    video {
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+    }
+
+    /* =====================
+       LIST & QUIZ
+    ====================== */
+    .list-group-item {
+      background: transparent;
+      border: none;
+      border-left: 4px solid #ffc107;
+      margin-bottom: 8px;
+      padding-left: 14px;
+      color: white;
+    }
+
+    .quiz-option {
+      background: rgba(255,255,255,0.08);
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .quiz-option:hover {
+      background: rgba(255,193,7,0.2);
+    }
+
+    .benar { background: rgba(25,135,84,.7)!important; color:#fff; }
+    .salah { background: rgba(220,53,69,.7)!important; color:#fff; }
+
+    /* =====================
+       AUTO ANIMATION
+    ====================== */
+    .auto-paragraph p {
+      opacity: 0;
+      animation: paragraphFade 0.8s ease forwards;
+    }
+
+    .auto-paragraph p:nth-child(1){animation-delay:0.2s}
+    .auto-paragraph p:nth-child(2){animation-delay:0.4s}
+    .auto-paragraph p:nth-child(3){animation-delay:0.6s}
+    .auto-paragraph p:nth-child(4){animation-delay:0.8s}
+    .auto-paragraph p:nth-child(5){animation-delay:1s}
+
+    @keyframes paragraphFade {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    /* =====================
+       PROGRESS BAR
+    ====================== */
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 0%;
+      background: linear-gradient(90deg,#ffc107,#ff5722);
+      z-index: 99999;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="progressBar"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-warning" href="#">Edukasi Komputer</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-3">
+          <span class="nav-link text-warning small opacity-75">
+            ⏰ <span id="datetime"></span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center p-5">
+  <div class="container" data-aos="fade-up">
+    <h1 id="typingText"></h1>
+    <p class="lead">Belajar Dasar Komputer Modern</p>
+    <a href="#materi" class="btn btn-light mt-2">Pelajari</a>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="container my-5" id="materi">
+
+  <!-- AUDIO -->
+  <div class="card shadow mb-4" data-aos="fade-up">
+    <div class="card-body">
+      <p>Dengerin lagu sambil belajar biar makin santai 🎧</p>
+      <audio controls class="w-100">
+        <source src="mus/bruno.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+
+  <!-- MATERI -->
+  <div class="mb-4 auto-paragraph" data-aos="fade-up">
+    <img src="pict/cpu2.jpg" class="img-wrap-left">
+<p>
+<b data-bs-toggle="tooltip" title="CPU adalah otak utama komputer">
+CPU (Central Processing Unit)</b> adalah komponen inti dalam sistem komputer yang berperan sebagai
+<mark>pusat pengendali</mark> dan <mark>pengolah data</mark>. CPU sering disebut sebagai
+<mark>otak komputer</mark> karena semua aktivitas komputer, mulai dari yang paling sederhana
+hingga yang paling kompleks, diproses melalui komponen ini.
+</p>
+
+<p>
+Setiap perintah yang diberikan pengguna, seperti mengetik di keyboard, membuka aplikasi,
+menjalankan game, hingga memutar video, akan diterjemahkan menjadi
+<mark>instruksi mesin</mark>
+yang kemudian diproses oleh CPU. Instruksi-instruksi tersebut berasal dari perangkat lunak
+(software) yang tersimpan di media penyimpanan dan dimuat ke dalam
+<mark>memori utama (RAM)</mark>
+sebelum akhirnya dieksekusi oleh CPU.
+</p>
+
+<p>
+CPU bekerja melalui sebuah mekanisme yang disebut
+<mark>siklus instruksi</mark>, yang terdiri dari
+empat tahap utama yaitu <b>fetch, decode, execute, dan store</b>.
+Pada tahap <i>fetch</i>, CPU mengambil instruksi dari memori.
+Selanjutnya pada tahap <i>decode</i>, instruksi tersebut diterjemahkan agar dapat dipahami oleh CPU.
+Pada tahap <i>execute</i>, CPU menjalankan instruksi tersebut, misalnya melakukan perhitungan,
+pemindahan data, atau pengambilan keputusan logika.
+Terakhir, pada tahap <i>store</i>, hasil pemrosesan disimpan kembali ke memori.
+</p>
+
+<p>
+<br>
+Proses siklus instruksi ini terjadi sangat cepat, bahkan pada prosesor modern dapat mencapai
+kecepatan miliaran siklus per detik. Kecepatan ini diukur dalam satuan
+<b>Hertz (Hz)</b>, yang biasanya dituliskan dalam
+<mark>GHz (Gigahertz)</mark>.
+Semakin tinggi kecepatan clock CPU,
+maka semakin cepat pula CPU dalam mengeksekusi instruksi.
+</p>
+
+<p>
+Secara struktur, CPU tersusun atas beberapa bagian utama.
+<b><mark>Control Unit (CU)</mark></b> berfungsi
+mengatur jalannya instruksi dan mengendalikan aliran data antara CPU, memori,
+dan perangkat keras lainnya.
+<b><mark>Arithmetic Logic Unit (ALU)</mark></b> bertugas melakukan
+operasi aritmatika seperti penjumlahan, pengurangan, perkalian,
+serta operasi logika seperti perbandingan dan pengambilan keputusan.
+Selain itu terdapat <b><mark>Register</mark></b>,
+yaitu memori berukuran kecil namun sangat cepat yang digunakan
+untuk menyimpan data dan instruksi sementara selama proses berlangsung.
+</p>
+
+<p>
+Performa CPU juga sangat dipengaruhi oleh
+<mark>jumlah core</mark> yang dimilikinya.
+CPU dengan banyak core mampu menjalankan beberapa proses secara bersamaan
+(<i>multitasking</i>) dengan lebih efisien.
+Teknologi seperti <i>multi-core</i> dan
+<i>hyper-threading</i> memungkinkan CPU menangani beban kerja yang lebih berat
+tanpa mengorbankan kinerja sistem.
+</p>
+
+<p>
+Selain itu, <mark>arsitektur CPU</mark> juga berperan penting dalam menentukan
+efisiensi dan performa.
+Arsitektur modern dirancang agar lebih hemat daya, lebih cepat,
+dan mampu mendukung berbagai teknologi terbaru seperti kecerdasan buatan (AI),
+komputasi grafis, dan pemrosesan data berskala besar.
+</p>
+
+<p>
+Dalam kehidupan sehari-hari, CPU digunakan tidak hanya pada komputer desktop
+dan laptop, tetapi juga pada smartphone, tablet, server, perangkat IoT,
+hingga sistem otomasi industri.
+Perkembangan CPU yang semakin canggih menjadi salah satu faktor utama
+pesatnya kemajuan teknologi digital di era modern.
+</p>
+
+<p>
+Sebagai kesimpulan, CPU merupakan
+<mark>komponen paling vital</mark>
+dalam sistem komputer.
+Tanpa CPU, komputer tidak dapat menjalankan perintah apa pun.
+Oleh karena itu, pemahaman tentang cara kerja dan peran CPU
+sangat penting dalam dunia teknologi informasi dan komputer.
+</p>
+  </div>
+
+  <div style="clear:both"></div>
+
+  <!-- LIST -->
+  <h2 class="text-warning mb-3" data-aos="fade-up">Fungsi Utama CPU</h2>
+  <ul class="list-group mb-4" data-aos="fade-up">
+    <li class="list-group-item">Menjalankan instruksi</li>
+    <li class="list-group-item">Operasi aritmatika & logika</li>
+    <li class="list-group-item">Mengatur RAM & I/O</li>
+    <li class="list-group-item">Kontrol alur data</li>
+  </ul>
+
+  <!-- VIDEO -->
+  <h2 class="text-warning mt-5 mb-3" data-aos="fade-up">Video Penjelasan</h2>
+  <video controls class="w-100" data-aos="fade-up">
+    <source src="vid/cara_kerja_cpu.mp4" type="video/mp4">
+  </video>
+
+  <!-- QUIZ -->
+  <div class="card shadow mt-5" data-aos="fade-up">
+    <div class="card-body">
+      <h4 class="text-warning">Mini Quiz 🎯</h4>
+      <p>Apa fungsi utama CPU?</p>
+
+      <div class="quiz-option" onclick="jawab(this,false)">Menyimpan data permanen</div>
+      <div class="quiz-option" onclick="jawab(this,true)">Mengolah dan menjalankan instruksi</div>
+      <div class="quiz-option" onclick="jawab(this,false)">Menampilkan gambar</div>
+
+      <p id="hasilQuiz" class="mt-3 fw-bold"></p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="bg-black text-center py-3">
+  <small>&copy; CopyRight Azka Naufaldi | 251011701158 | SIFP016</small>
+</footer>
+
+<!-- SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({ once:true });
+
+function updateDateTime(){
+  document.getElementById('datetime').innerText =
+    new Date().toLocaleString('id-ID');
+}
+setInterval(updateDateTime,1000);
+updateDateTime();
+
+function jawab(el, benar){
+  document.querySelectorAll(".quiz-option")
+    .forEach(o=>o.classList.remove("benar","salah"));
+  el.classList.add(benar ? "benar" : "salah");
+  hasilQuiz.innerText = benar ? "Jawaban benar 💯" : "Masih salah 😅";
+}
+
+window.addEventListener("scroll", ()=>{
+  const st = document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+  document.getElementById("progressBar").style.width =
+    (st/h)*100 + "%";
+});
+
+const text = "Mengenal Apa Itu CPU?";
+let i = 0;
+(function typeEffect(){
+  if(i < text.length){
+    typingText.innerHTML += text.charAt(i++);
+    setTimeout(typeEffect,80);
+  }
+})();
+</script>
+
+</body>
+</html>
